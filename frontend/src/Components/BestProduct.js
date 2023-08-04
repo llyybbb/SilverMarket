@@ -1,5 +1,4 @@
 import GlobalStyle from "../GlobalStyle";
-import { Center } from "../styles/basicStyles";
 import { styled } from "styled-components";
 
 function BestProduct(lists) {
@@ -7,17 +6,12 @@ function BestProduct(lists) {
         alert("클릭!")
     }
 
-    const BackIcon = styled.div`
-        /* background-image: url({lists.icon}); */
-        width: 100%;
-        height: 100%;
-    `;
     return (
         <>
         <GlobalStyle />
         <Box>
             <ImgButton onClick={onClick}> 
-                <img src={lists.icon} width="100%" height="80%"/>
+                <img src={lists.icon} width="100%" height="80%" alt="best"/>
             </ImgButton>
             <InfoButton>
                 <Info>{lists.name}</Info>

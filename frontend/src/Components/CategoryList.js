@@ -10,7 +10,7 @@ function CategoryList(lists) {
         <Box>
             <Center style={{width: "73px", height: "73px"}}> 
                 <Gray>
-                    <img src={lists.icon} width="35px" height="35px"/>
+                    <img src={lists.icon} width="35px" height="35px" alt="category"/>
                 </Gray>
             </Center>
             <p style={{color: "#06161C", fontSize: "15px"}}>{lists.name}</p>
