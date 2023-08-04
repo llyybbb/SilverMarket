@@ -58,6 +58,31 @@ export default function Login() {
 
   // 로그인 버튼 클릭 시
   const onClickConfirmButton = () => {
+
+    //Id, pw db 검사
+    // axios.post('#', null, {
+    //   params: {
+    //     'user_id': ID,
+    //     'user_pw': pw
+    //   }
+    // })
+    // .then(res=> {
+    //     console.log("res : " + res)
+    //     if(res.data.userID === undefined) {
+    //       alert("입력하신 id가 일치하지 않습니다.")
+    //     }
+    //     else if(res.data.userID === null){
+    //       alert("입력하신 비밀번호가 일치하지 않습니다.")
+    //     }
+    //     else if(res.data.userID === inputID) {
+    //       console.log("로그인 성공")
+    //       sessionStorage.setItem('user_id', inputID)
+    //       document.location.href = "/"
+    //     }
+    // })
+    // .catch()
+
+
     if (ID === User.email && pw === User.pw) {
       alert("로그인에 성공했습니다.");
     } else {
