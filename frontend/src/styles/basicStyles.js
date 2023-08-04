@@ -7,6 +7,7 @@ export const Container = styled.div`
     width: 100%;
     margin: 0 auto;
     padding: 2.6rem 0 0 0;
+    overflow: scroll;
     align-items: center;
 `;
 
@@ -33,4 +34,19 @@ export const Text = styled.p`
 export const Header = styled.div`
     display: flex;
     padding-left: 10px;
+`;
+
+export const Title = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 63px;
+`;
+
+export const Center = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
