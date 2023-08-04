@@ -26,6 +26,28 @@ function Home() {
     const CateList = lists.map((v) => (<CategoryList name={v[1]} icon={v[2]}/>))
     const BestList = best.map((v) => (<BestProduct name={v[1]} icon={v[2]} price={v[3]}/>))
     
+    //리스트 받아오기
+    // const getProduct = async() => {
+    //     const json = await (    
+    //         await fetch(
+    //             `http://localhost:8000/results/${query}`
+    //         )
+    //     ).json();
+    //     setProduct(json)
+    //     setLoading(false);
+    // };
+    // useEffect(()=>{
+    //     getProduct()
+    // })
+    
+    // //getID
+    //     const getID = (id) => {axios.get(
+    //         `http://localhost:8000/results/${id}`
+    //     )
+    //         .then((response)=>setId(response.data))
+    // }
+
+
     return (
         <> 
         <GlobalStyle />
