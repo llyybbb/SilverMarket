@@ -18,16 +18,29 @@ export default function Login() {
   const [IDValid, setIDValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [Allow, setAllow] = useState(false);
+  const [color, setColor] = useState("#BCC6BF");
 
   const navigate = useNavigate();
+
+  const Btn = styled.button`
+  width: 30%;
+  height: 48px;
+  border: none;
+  background: ${color};
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+`;
 
 // 로그인 가능/불가능 판단
   useEffect(() => {
     if (IDValid && pwValid) {
       setAllow(false);
+      setColor("linear-gradient(329.82deg, #23AA49 18.21%, #4BC06C 109.1%)")
       return;
     }
     setAllow(true);
+    setColor("#BCC6BF")
   }, [IDValid, pwValid]);
 
   // 아이디 유효성 검사
@@ -85,12 +98,11 @@ export default function Login() {
 
     if (ID === User.email && pw === User.pw) {
       alert("로그인에 성공했습니다.");
+      navigate("/");
     } else {
       alert("등록되지 않은 회원입니다.");
     }
     
-    // 페이지 이동
-    navigate("/");
   };
 
   return (
@@ -182,16 +194,6 @@ const Logo = styled.img`
   width: 70%;
   height: 52px;
   overflow: hidden;
-`;
-
-const Btn = styled.button`
-  width: 30%;
-  height: 48px;
-  border: none;
-  background: linear-gradient(329.82deg, #23AA49 18.21%, #4BC06C 109.1%);
-  border-radius: 8px;
-  color: white;
-  font-size: 18px;
 `;
 
 const Foot = styled.div`
