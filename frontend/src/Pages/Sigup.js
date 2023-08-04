@@ -1,15 +1,16 @@
+import GlobalStyle from "../GlobalStyle";
+
+import { Header } from "../styles/basicStyles.js";
 
 function Signup() {
-    const onClick = () => {
-        alert("눌렸습니다!")
-    }
     return (
      <> 
-        <div> 
-            <h1>hi</h1>
-        </div>
+        <GlobalStyle />
+        <Header></Header>
+
      </>
     );
 }
 
 export default Signup;
+

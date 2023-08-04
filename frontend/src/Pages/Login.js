@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom";
 import GlobalStyle from "../GlobalStyle";
-import { Container, Input, Text} from "../styles/basicStyles";
+import { Container, Text, Input } from "../styles/basicStyles.js";
 
 const User = {
   email: "test2323",

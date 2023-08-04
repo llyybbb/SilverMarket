@@ -29,3 +29,8 @@ export const Text = styled.p`
     font-size: 16px;
     padding: 0.3rem 0.3rem 0.3rem 0;
 `;
+
+export const Header = styled.div`
+    display: flex;
+    padding-left: 10px;
+`;
