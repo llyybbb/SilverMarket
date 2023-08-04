@@ -29,7 +29,7 @@ function BestProduct(lists) {
 export default BestProduct
 
 const Box = styled.div`
-    width: 42vw;
+    width: 43.5vw;
     height: 55vw;
     display: flex;
     flex-direction: column;
