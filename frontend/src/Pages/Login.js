@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom";
-
+import GlobalStyle from "../GlobalStyle";
+import { Container, Input, Text} from "../styles/basicStyles";
 
 const User = {
   email: "test2323",
   pw: "test2323@@@",
 };
+
+
 
 export default function Login() {
   const [ID, setID] = useState("");
@@ -66,58 +69,114 @@ export default function Login() {
   };
 
   return (
-    <div className="page">
-      <div className="titleWrap">
-        이메일과 비밀번호를
-        <br />
-        입력해주세요
-      </div>
+    <>
+    <GlobalStyle />
+    <Container>
+      <LogoBox>
+        <Logo src="https://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg" />
+      </LogoBox>
+        <div 
+          className="contentWrap" 
+          style={{width: "85%", marginBottom: "22px"}}>
+          <Text style={{color: "#23AA49"}}>아이디</Text>
+          <div className="inputWrap">
+            <Input
+              type="text"
+              value={ID}
+              onChange={handleID}
+            />
+          </div>
+          {/* <div className="errorMessageWrap">
+            {!IDValid && ID.length > -1 && (
+              <Text>8자 이상 입력해주세요.</Text>
+            )}
+          </div> */}
 
-      <div className="contentWrap">
-        <div className="inputTitle">이메일 주소</div>
-        <div className="inputWrap">
-          <input
-            className="input"
-            type="text"
-            placeholder="test2323"
-            value={ID}
-            onChange={handleID}
-          />
+          <Text style={{ marginTop: "13px", color: "#23AA49" }}>
+            비밀번호
+          </Text>
+          <div className="inputWrap">
+            <Input
+              type="password"
+              value={pw}
+              onChange={handlePw}
+            />
+          </div>
+          {/* <div className="errorMessageWrap">
+            {!pwValid && pw.length > -1 && (
+              <Text>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요.</Text>
+            )}
+          </div> */}
         </div>
-        <div className="errorMessageWrap">
-          {!IDValid && ID.length > -1 && (
-            <div>8자 이상 입력해주세요.</div>
-          )}
-        </div>
+        
+        <Foot>
+            <Find
+              href="/">
+                아이디 찾기
+            </Find>
+            <Find
+              href="/"
+              style={{textDecoration: "none", color: "#23AA49", marginBottom: "22px"}}>
+                비밀번호 찾기
+            </Find>
+          </Foot>
 
-        <div style={{ marginTop: "26px" }} className="inputTitle">
-          비밀번호
-        </div>
-        <div className="inputWrap">
-          <input
-            className="input"
-            type="password"
-            placeholder="test2323@@@"
-            value={pw}
-            onChange={handlePw}
-          />
-        </div>
-        <div className="errorMessageWrap">
-          {!pwValid && pw.length > -1 && (
-            <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요.</div>
-          )}
-        </div>
-      </div>
-
-      <div>
-        <button
-          onClick={onClickConfirmButton}
-          disabled={Allow}
-          className="bottomButton"
-        >
-          확인
-        </button>
-      </div>
-    </div>
+          <Btn
+            onClick={onClickConfirmButton}
+            disabled={Allow}
+            className="bottomButton"
+          >
+            확인
+          </Btn>
+          <Foot
+            style={{position: "absolute", bottom: "30px"}}>
+            <p
+              style={{color: "#BCC6BF", marginRight: "7px"}}>
+                계정이 없으신가요?
+            </p>
+            <a 
+              href="/signup"
+              style={{textDecoration: "none", color: "#23AA49"}}>
+                회원가입
+            </a>
+          </Foot>
+    </Container>
+    </>
   );
 }
+
+const LogoBox = styled.div`
+  width: 100%;
+  height: 30vh;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+`;
+
+const Logo = styled.img`
+  width: 70%;
+  height: 52px;
+  overflow: hidden;
+`;
+
+const Btn = styled.button`
+  width: 30%;
+  height: 48px;
+  border: none;
+  background: linear-gradient(329.82deg, #23AA49 18.21%, #4BC06C 109.1%);
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+`;
+
+const Foot = styled.div`
+  display: flex;
+
+`;
+
+const Find = styled.a`
+  text-decoration: none;
+  color: #1DAB45;
+  margin-right: 7px;
+  font-size: 14px;
+`;
