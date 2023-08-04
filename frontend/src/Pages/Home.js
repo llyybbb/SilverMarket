@@ -6,6 +6,7 @@ import { CiSearch } from "react-icons/ci"
 import CategoryList from "../Components/CategoryList";
 import BestProduct from "../Components/BestProduct";
 import SimpleSlider from "../Components/SimpleSlider";
+import Footer from "../Components/Footer";
 
 
 function Home() {
@@ -101,8 +102,8 @@ function Home() {
                             {BestList}
                         </Center>
                     </Center>
-
                 </Container>
+                <Footer />
             </div>
         </>
     );
