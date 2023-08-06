@@ -5,13 +5,6 @@ import { FaBox } from "react-icons/fa";
 
 function Footer() {
 
-    const icon = [
-        { id: 1, url: '../img/banner1.svg' },
-        { id: 2, url: '../img/banner2.svg' },
-        { id: 3, url: '../img/banner1.svg' },
-        { id: 4, url: '../img/banner2.svg' },
-      ];
-
     return (
         <>
 

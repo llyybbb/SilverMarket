@@ -1,5 +1,4 @@
 import GlobalStyle from "../GlobalStyle";
-import { Center } from "../styles/basicStyles";
 import { styled } from "styled-components";
 
 function CategoryList(lists) {
