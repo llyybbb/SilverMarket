@@ -66,10 +66,10 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 83vw;
+  width: 82vw;
   height: 38vw;
   background-color: white;
-  border-radius: 16px;
+  border-radius: 25px;
 `;
 
 const StyledSlider = styled(Slider)`

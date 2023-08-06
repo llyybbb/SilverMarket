@@ -4,16 +4,20 @@ import { styled } from "styled-components";
 
 function CategoryList(lists) {
 
+    const onClick = () => {
+        alert("클릭!")
+    }
+
     return (
         <>
         <GlobalStyle />
-        <Box>
-            <Center style={{width: "73px", height: "73px"}}> 
+        <Box onClick={onClick}>
+            <GrayBox> 
                 <Gray>
-                    <img src={lists.icon} width="35px" height="35px" alt="category"/>
+                    <img src={lists.icon} width="50%" height="50%" alt="category"/>
                 </Gray>
-            </Center>
-            <p style={{color: "#06161C", fontSize: "15px"}}>{lists.name}</p>
+            </GrayBox>
+            <Text>{lists.name}</Text>
         </Box>
         </>
     );
@@ -21,13 +25,27 @@ function CategoryList(lists) {
 
 export default CategoryList
 
-const Box = styled.div`
-    width: 25%;
+const Box = styled.button`
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: none;
+    background-color: transparent;
+`;
+
+const GrayBox = styled.div`
+    width: 73px;
+    height: 73px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+        width: 9em;
+        height: 9em;
+    }
 `;
 
 const Gray = styled.div`
@@ -40,3 +58,12 @@ const Gray = styled.div`
     border-radius: 50%;
     margin-bottom: 20px;
 `;  
+
+const Text = styled.p`
+    color: #06161C;
+    font-size: 16px;
+
+    @media (min-width: 768px) {
+        font-size: 1.9em;
+    }
+`;
