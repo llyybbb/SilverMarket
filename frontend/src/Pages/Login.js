@@ -18,18 +18,19 @@ export default function Login() {
   const [IDValid, setIDValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [Allow, setAllow] = useState(false);
+  
   const [color, setColor] = useState("#BCC6BF");
 
   const navigate = useNavigate();
 
   const Btn = styled.button`
-  width: 30%;
-  height: 48px;
-  border: none;
-  background: ${color};
-  border-radius: 8px;
-  color: white;
-  font-size: 18px;
+    width: 30%;
+    height: 48px;
+    border: none;
+    background: ${color};
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
 `;
 
 // 로그인 가능/불가능 판단
@@ -163,7 +164,7 @@ export default function Login() {
             disabled={Allow}
             className="bottomButton"
           >
-            확인
+            로그인
           </Btn>
           <Foot
             style={{position: "absolute", bottom: "30px"}}>

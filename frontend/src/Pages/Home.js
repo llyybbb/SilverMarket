@@ -1,7 +1,7 @@
 import React from "react";
 import GlobalStyle from "../GlobalStyle";
 import { styled } from "styled-components";
-import { Container, Title, Center } from "../styles/basicStyles";
+import { Container, Title, Center } from "../styles/basicStyles.js";
 import { CiSearch } from "react-icons/ci"
 import CategoryList from "../Components/CategoryList";
 import BestProduct from "../Components/BestProduct";

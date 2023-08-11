@@ -28,7 +28,7 @@ export default class SimpleSlider extends Component {
             centerPadding: '0px',  // 0px 하면 슬라이드 끝쪽 이미지가 안잘림
             pauseOnHover : true,
             draggable : true,
-            // centerPadding: "25px",
+            centerPadding: "25px",
           };
 
     return (
