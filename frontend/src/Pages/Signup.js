@@ -3,8 +3,9 @@ import GlobalStyle from "../GlobalStyle";
 import { Container, Header, HeaderText, Input, InputTitle } from "../styles/basicStyles";
 import { GoChevronLeft } from "react-icons/go";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-function Signup2() {
+function Signup() {
     // 입력값 상태값
     const [id, setID] = useState("");
     const [pw, setPW] = useState("");
@@ -205,6 +206,7 @@ function Signup2() {
     const isAllValid = isIdValid && isPwValid && isEmailValid && isNameValid && isPhoneValid && checkID;
 
     // 제출버튼
+    const navigate = useNavigate();
     const onsubmit = () => {
         console.log(isIdValid)
         console.log(isPwValid)
@@ -214,6 +216,8 @@ function Signup2() {
         console.log(isAddrValid)
         console.log(isGenderValid)
         console.log(checkID)
+        alert("회원가입에 성공했습니다!");
+        navigate("/login");
     }
 
     // 아이디 중복 버튼 색상
@@ -397,7 +401,7 @@ function Signup2() {
     );
 }
 
-export default Signup2
+export default Signup
 
 
 const InputBox = styled.div`
