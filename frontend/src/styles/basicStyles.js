@@ -62,5 +62,5 @@ export const HeaderText = styled.p`
 export const InputTitle = styled.p`
     font-size: 16px;
     margin-bottom: 5px;
-    font-weight: bold;
+    /* font-weight: bold; */
 `;

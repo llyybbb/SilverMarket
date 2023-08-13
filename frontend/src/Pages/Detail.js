@@ -29,7 +29,7 @@ function Detail() {
 
     const navigate = useNavigate();
     const onBuyClick = () => {
-        navigate("/purchase")
+        navigate("/order")
     }
 
     const [select, setSelect] = useState(true);
