@@ -15,12 +15,7 @@ function BestProduct(lists) {
             </ImgButton>
             <InfoButton>
                 <Info>{lists.name}</Info>
-                <p style={{
-                    paddingLeft: "5px",
-                    color: "#FF324B",
-                    fontSize: "17px",
-                    fontWeight: "bold"
-                }}>5,000₩</p>
+                <Price>5,000₩</Price>
             </InfoButton>
         </Box>
         </>
@@ -40,30 +35,32 @@ const Box = styled.div`
     margin-bottom: 16px;
     background-color: #F3F5F7;
     border-radius: 16px;
+
+
+    @media (min-width: 768px) {
+        margin-left: 2em;
+    }
 `;
 
-const ImgButton = styled.button`
+const ImgButton = styled.div`
     width: 100%;
     height: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
     margin-bottom: 5px;
-    border: none;
-    background-color: transparent;
 `;
 
-const InfoButton = styled.button`
+const InfoButton = styled.div`
     width: 100%;
     height: 35%;
-    border: none;
-    background-color: transparent;
     display: flex;
     flex-direction: column;
+    padding-left: 15px;
 `;
 
 const Info = styled.p`
+    margin-bottom: 3px;
     font-size: 16px;
     font-weight: bolder;
     display: -webkit-box;
@@ -73,6 +70,24 @@ const Info = styled.p`
     word-wrap : break-word;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    padding: 0 5px 0 5px;
-    word-break:keep-all
+    padding: 3px 5px 0 0px;
+    word-break:keep-all;
+    line-height: 110%;
+
+    @media (min-width: 768px) {
+    font-size: 1.7em;
+    padding: 15px 5px 0 15px;
+  }
+`;
+
+const Price = styled.p`
+    color: #FF324B;
+    font-size: 19px;
+    font-weight: bold;
+    
+    @media (min-width: 768px) {
+    font-size: 2em;
+    font-weight: bolder;
+    padding: 15px 5px 0 15px;
+  }
 `;

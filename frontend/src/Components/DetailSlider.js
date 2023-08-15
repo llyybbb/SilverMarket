@@ -13,7 +13,7 @@ const items = [
   { id: 4, url: '../img/banner2.svg' },
 ];
 
-export default class SimpleSlider extends Component {
+export default class DetailSlider extends Component {
 
     render() {
         const settings = {
@@ -22,13 +22,9 @@ export default class SimpleSlider extends Component {
             speed: 1000,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,  // 넘어가는 속도
             centerMode: true,
             centerPadding: '0px',  // 0px 하면 슬라이드 끝쪽 이미지가 안잘림
-            pauseOnHover : true,
             draggable : true,
-            centerPadding: "25px",
           };
 
     return (
@@ -57,6 +53,7 @@ const Container = styled.div`
     align-content: center;
     width: 100%;
     height: 100%;
+    margin-bottom: 20px;
 `;
 
 const ImageContainer = styled.div`
@@ -66,10 +63,9 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 82vw;
-  height: 38vw;
-  background-color: white;
-  border-radius: 25px;
+  width: 100vw;
+  height: 80vw;
+  object-fit: cover;
 `;
 
 const StyledSlider = styled(Slider)`

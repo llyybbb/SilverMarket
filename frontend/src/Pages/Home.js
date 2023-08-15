@@ -1,7 +1,7 @@
 import React from "react";
 import GlobalStyle from "../GlobalStyle";
 import { styled } from "styled-components";
-import { Container, Title, Center } from "../styles/basicStyles";
+import { Container, Title, Center } from "../styles/basicStyles.js";
 import { CiSearch } from "react-icons/ci"
 import CategoryList from "../Components/CategoryList";
 import BestProduct from "../Components/BestProduct";
@@ -76,18 +76,19 @@ function Home() {
                         </form>
                     </InputBox>
                     <div style={{
-                        width: "100%", height: "19vh", display: "flex",
-                        justifyContent: "center", alignItems: "center"}}>
+                        width: "100%", height: "19%", display: "flex",
+                        justifyContent: "center", alignItems: "center",
+                        marginBottom: "3vw"}}>
                         <SimpleSlider />
                     </div>
-                    <Center style={{flexDirection: "column", marginBottom: "10px"}}>
+                    <Center style={{flexDirection: "column", marginBottom: "3vw"}}>
                         <Center className="CategoryBox">
                             <Title>
                                 <Ttitle>상품 목록😋</Ttitle>
                                 <More href="/signup">더 보기</More>
                             </Title>
                         </Center>
-                        <Center className="Category" style={{height: "110px"}}>
+                        <Center className="Category" style={{justifyContent: "space-around"}}>
                             {CateList}
                         </Center>
                     </Center>
@@ -140,10 +141,19 @@ const Ttitle = styled.p`
     font-size: 18px;
     font-weight: bolder;
     color: #06161C;
+
+    @media (min-width: 768px) {
+    font-size: 1.7em;
+    }
 `;
 
 const More = styled.a`
     font-size: 15px;
     color: #23AA49;
     text-decoration: none;
+
+
+    @media (min-width: 768px) {
+    font-size: 1.3em;
+    }
 `;

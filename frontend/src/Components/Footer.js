@@ -2,37 +2,64 @@ import { styled } from "styled-components";
 import GlobalStyle from "../GlobalStyle";
 import { GoHomeFill, GoHeartFill, GoPersonFill } from "react-icons/go";
 import { FaBox } from "react-icons/fa";
+import { useState } from "react";
 
 function Footer() {
+    const [select, setSelect] = useState("home");
+    console.log(select)
 
-    const icon = [
-        { id: 1, url: '../img/banner1.svg' },
-        { id: 2, url: '../img/banner2.svg' },
-        { id: 3, url: '../img/banner1.svg' },
-        { id: 4, url: '../img/banner2.svg' },
-      ];
+    // onpopstate
+    window.onpopstate = function(event) {
+        alert("location: " + document.location + ", state : " + JSON.stringify(event.state));
+    }
 
     return (
         <>
-
         <GlobalStyle />
         <Box>
             <div style={{
                 display: "flex", justifyContent: "space-between", alignItems: "center",
                 width: "85%", height: "100%", 
             }}>
-            <GoHomeFill 
-                size="40px"
-                color="#23AA49"/>
-            <GoHeartFill 
-                size="40px"
-                color="#DBDBDB"/>
-            <FaBox 
-                size="30px"
-                color="#DBDBDB"/>
-            <GoPersonFill 
-                size="40px"
-                color="#DBDBDB"/>
+                <Btn onClick={() => {
+                    setSelect('home')
+                    alert(select)
+                }}>
+                    <GoHomeFill style={{
+                        width: "45px", height: "45px",
+                        color: select === 'home' ? "#23AA49" : "#F3F5F7"
+                    }}/>
+                </Btn>
+
+                <Btn onClick={() => {
+                    setSelect('favo')
+                    alert(select)
+                }}>
+                    <GoHeartFill  style={{
+                        width: "45px", height: "45px",
+                        color: select === 'favo' ? "#23AA49" : "#F3F5F7"
+                    }}/>
+                </Btn>
+
+                <Btn onClick={() => {
+                    setSelect('deliver')
+                    alert(select)
+                }}>
+                    <FaBox  style={{
+                        width: "45px", height: "45px",
+                        color: select === 'deliver' ? "#23AA49" : "#F3F5F7"
+                    }}/>
+                </Btn>
+                
+                <Btn onClick={() => {
+                    setSelect('mypage')
+                    alert(select)
+                }}>
+                    <GoPersonFill  style={{
+                        width: "45px", height: "45px",
+                        color: select === 'mypage' ? "#23AA49" : "#F3F5F7"
+                    }}/>
+                </Btn>
             </div>
         </Box>
         </>
@@ -51,4 +78,12 @@ const Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+const Btn = styled.button`
+    background-color: transparent;
+    border: none;
+    width: 45px;
+    height: 45px;
+    display: flex;
 `;
